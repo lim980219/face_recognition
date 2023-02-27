@@ -1,23 +1,28 @@
-Face Recognition API
-This is a simple Flask-based RESTful API for face recognition. The API uses a trained KNN model to recognize faces in uploaded images. The recognized faces are then categorized and saved in corresponding directories.
+# 얼굴 인식 API
+이 프로젝트는 인공지능을 사용하여 이미지를 분류하는 Flask API입니다.
 
-Getting Started
-To get started with the API, you'll need to have Python and Flask installed on your system.
 
-Clone this repository: git clone https://github.com/your_username/face-recognition-api.git
-Install the required packages: pip install -r requirements.txt
-Run the API: python app.py
-The API should now be running on http://localhost:5000. You can use a tool like Postman to test the API.
+## 설치 및 실행
 
-API Endpoints
-The API has one endpoint for uploading and processing images:
+1. 이 저장소를 클론합니다.
 
-/ArtificialIntelligence/predict
-Method: POST
+2. train_predict.py 파일에서 모델 경로를 수정합니다.
 
-Request Parameters:
+3. requirements.txt 파일에서 필요한 라이브러리를 설치합니다.
 
-file: The file to be uploaded. Only PNG, JPG, and JPEG formats are allowed.
-Response:
+4. app.py 파일을 실행하여 서버를 실행합니다.
 
-result: A string indicating whether the request was successful.
+
+## 사용 방법
+
+API는 /predict 엔드포인트를 제공합니다.
+
+POST 요청으로 이미지 파일을 업로드하면, 해당 이미지가 어떤 사람의 얼굴인지 예측합니다. 
+
+그리고 예측 결과에 따라 해당 사람의 디렉토리에 이미지 파일을 저장합니다.
+
+이 API를 사용하기 위해서는, 먼저 train 폴더에 이미지를 저장해야 합니다. 
+
+이미지의 파일 이름은 해당 사람의 이름과 같아야 합니다.
+
+
